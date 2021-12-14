@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     def p2_filter(path, connection):
         lower = [c for c in path if c.islower()]
-        duplicates_dont_exist = len(lower) == len(set(lower))
+        duplicates_dont_exist = len(lower) == len(dict.fromkeys(lower))
         return connection not in path or connection.isupper() or duplicates_dont_exist
 
     print("Part 1 sln:", part1_and_part2(p1_filter))
